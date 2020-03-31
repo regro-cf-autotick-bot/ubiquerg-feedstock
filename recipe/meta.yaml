@@ -1,17 +1,17 @@
 {% set name = "ubiquerg" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: fb9f5cc40902d9327644471a7f5a69d2dcef36b3d4ea1485bc357ef4abdfcbaa
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 211e7480a0e3f7fcd8a70540b8a5386ecd37dcad0afdd2e84d78367a5f51a395
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
@@ -27,11 +27,11 @@ test:
     - ubiquerg
 
 about:
-  home: "https://github.com/pepkit/ubiquerg"
-  license: "BSD-2-Clause"
-  license_family: "BSD"
-  license_file: "LICENSE.txt"
-  summary: "Various utility functions."
+  home: https://github.com/pepkit/ubiquerg
+  license: BSD-2-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: Various utility functions.
 
 extra:
   recipe-maintainers:
